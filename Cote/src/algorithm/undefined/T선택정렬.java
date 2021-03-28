@@ -45,6 +45,12 @@ public class T선택정렬 {
 		// n = 수열의 개수
 		// s = 진행 단계
 		// arr = 정렬 대상 배열
+		
+		if (n < s) {
+			System.out.println("입력값 오류");
+			return;
+		}
+		
 		int minIndex, temp;
 		for (int i = 0; i < s; i++) {
 			minIndex = i;
