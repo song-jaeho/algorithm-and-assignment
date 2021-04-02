@@ -2,10 +2,10 @@ package algorithm.undefined;
 import java.util.*;
 
 /*
- * 커피 추출구 개수 N, 각 커피를 만드는 데 걸리는 시간이 주문번호 순서대로 담긴 배열 coffe_times
- * 커피가 완성되는 순서대로 주문번호를 배열에 담아 return 하시오.
+ * 아이스크림 추출구 개수 N, 각 아이스크림을 만드는 데 걸리는 시간이 주문번호 순서대로 담긴 배열 icecream_times
+ * 아이스크림이 완성되는 순서대로 주문번호를 배열에 담아 return 하시오.
  * 
- * 커피 주문이 추출구에 배정되는데 걸리는 시간은 없다고 가정, 커피 추출이 동시에 완료되는 경우 작은 주문번호가 앞에 오도록 하시오.
+ * 아이스크림 주문이 추출구에 배정되는데 걸리는 시간은 없다고 가정, 아이스크림 추출이 동시에 완료되는 경우 작은 주문번호가 앞에 오도록 하시오.
  * 
  * input/output sample
  * 1. 
@@ -14,7 +14,7 @@ import java.util.*;
  * 	1 [100, 1, 50, 1, 1] 	--> [1, 2, 3, 4, 5]
  * 
  */ 
-public class T커피머신 {
+public class T아이스크림머신 {
 
 public static void main(String[] args) {
 		
@@ -24,23 +24,23 @@ public static void main(String[] args) {
 		System.out.println(Arrays.toString(result));
 	}
 
-	public static int[] solution(int n, int[] coffe_times) {
-		// n = 커피 추출구 수
-		// coffe_times = 커피별 제조시간
-		List<Coffe> list = new ArrayList<Coffe>();
+	public static int[] solution(int n, int[] icecream_times) {
+		// n = 아이스크림 추출구 수
+		// icecream_times = 아이스크림별 제조시간
+		List<IceCream> list = new ArrayList<IceCream>();
 		
 		int index = 0;
 		for (; index < n; index++) {
 			// 실제 출력 순서는 1번째부터 시작하므로 인덱스에 1 더한다.
-			list.add(new Coffe(index + 1, coffe_times[index]));
+			list.add(new IceCream(index + 1, icecream_times[index]));
 		}
 		n = 0;
 		List<Integer> answerList = new ArrayList<>();
 		
-		while(answerList.size() < coffe_times.length) {
-			Iterator<Coffe> iter = list.iterator();
+		while(answerList.size() < icecream_times.length) {
+			Iterator<IceCream> iter = list.iterator();
 			while(iter.hasNext()) {
-				Coffe coffe = iter.next();
+				IceCream coffe = iter.next();
 				
 				if (coffe.getLeftTime() == 0) {
 					answerList.add(coffe.getIndex());
@@ -52,10 +52,10 @@ public static void main(String[] args) {
 				}
 			}
 			
-			if (index < coffe_times.length) {
+			if (index < icecream_times.length) {
 				while(n > 0) {
 					// 실제 출력 순서는 1번째부터 시작하므로 인덱스에 1 더한다.
-					list.add(new Coffe(index + 1, coffe_times[index]));
+					list.add(new IceCream(index + 1, icecream_times[index]));
 					index++;
 					n--;
 				}
@@ -64,7 +64,7 @@ public static void main(String[] args) {
 		
 		
 		// return 값용 타입변환처리
-		int[] result = new int[coffe_times.length];
+		int[] result = new int[icecream_times.length];
 		for (int i = 0; i < answerList.size(); i++) {
 			result[i] = answerList.get(i);
 		}
@@ -73,10 +73,10 @@ public static void main(String[] args) {
 
 }
 
-class Coffe {
+class IceCream {
 	int index;
 	int leftTime;
-	public Coffe(int index, int leftTime) {
+	public IceCream(int index, int leftTime) {
 		super();
 		this.index = index;
 		this.leftTime = leftTime;
@@ -95,7 +95,7 @@ class Coffe {
 	}
 	@Override
 	public String toString() {
-		return "Coffe [index=" + index + ", leftTime=" + leftTime + "]";
+		return "IceCream [index=" + index + ", leftTime=" + leftTime + "]";
 	}
 	
 }

@@ -1,18 +1,17 @@
 package algorithm.undefined;
 
 /**
- * 입력받는 연도 이후로 처음으로 오는 "가장 아름다운 연도"를 찾아내서 출력
- * "가장 아름답다"는 것은 중복되는 숫자가 가장 적은 것을 의미한다.
+ * 입력받는 연도 이후로 처음으로 오는 중복되는 숫자가 가장 적은 년도를 출력하기
  * 
- * (ex) 2000을 입력 받았을 때, 2222년도는 가장 아름답지 않고 2013년도는 가장 아름답다. 
+ * (ex) 2000을 입력 받았을 때, 2222년도는 중복최대, 2013년도는 중복최소다. 
  * 
  * @author song-jaeho
  *
  */
-public class T가장예쁜년도 {
+public class T중복최소년도 {
 
 	public static void main(String[] args) {
-		T가장예쁜년도 e = new T가장예쁜년도();
+		T중복최소년도 e = new T중복최소년도();
 		System.out.println(e.solution(1987));
 	}
 

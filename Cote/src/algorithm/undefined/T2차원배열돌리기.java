@@ -1,7 +1,7 @@
 package algorithm.undefined;
 
 /**
- * 행과 열의 수가 같은 2차원 배열(matrix)을 받아 시계방향으로 90도씩 회전 (인자 r회 만큼 반복 수행)
+ * 행과 열의 수가 같은 2차원 배열(matrix)을 받아 시계방향으로 90도씩 회전시키기 (인자 r회 만큼 반복 수행)
  * @author song-jaeho
  *
  */
