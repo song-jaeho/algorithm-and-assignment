@@ -1,4 +1,4 @@
-package algorithm.bfs;
+package algorithm.graph;
 
 import java.util.*;
 

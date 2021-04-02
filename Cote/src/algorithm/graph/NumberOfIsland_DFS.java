@@ -1,4 +1,4 @@
-package algorithm.dfs;
+package algorithm.graph;
 
 public class NumberOfIsland_DFS {
 
